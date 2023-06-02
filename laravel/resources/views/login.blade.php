@@ -4,10 +4,11 @@
 
 
 @section('contents')
+    @include('layout.errors')
     <form action="{{route('user.login.post')}}" method="post">
         {{-- csrf하면 토큰 생성  --}}
         @csrf
-        <input type="text" id="id" name="id" placeholder="ID">
+        <input type="text" id="email" name="email" placeholder="E-MAIL">
         <br>
         <input type="text" name="password" id="pasword" placeholder="PASSWORD">
         <br>
