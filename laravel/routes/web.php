@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\BoardsController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -43,3 +44,10 @@ Auth::routes();
 
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+
+
+Route::get('/boards/list',[BoardsController::class,'index'])->name('boards.index');
+Route::get('/boards/write',[BoardsController::class,'write'])->name('boards.write');
+Route::post('/boards/store',[BoardsController::class,'store'])->name('boards.store');
